@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="bt_ch01" type="node" name="bt_ch01_node" output="screen">
+        <param name="file" value="$(find bt_ch01)/bt_ch01_xml/bt_ch01_xml.xml"/>
+    </node>
+
+</launch>
