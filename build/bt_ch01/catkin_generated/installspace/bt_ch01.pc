@@ -1,8 +1,0 @@
-prefix=/home/rd400/behaviortree_test/install
-
-Name: bt_ch01
-Description: Description of bt_ch01
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib -lbt_ch01
-Requires: behaviortree_cpp_v3 roscpp rospy std_msgs

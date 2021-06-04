@@ -1,2 +1,0 @@
-bt_ch01:bt_ch02
--DCATKIN_DEVEL_PREFIX=/home/rd400/behaviortree_test/devel -DCMAKE_INSTALL_PREFIX=/home/rd400/behaviortree_test/install -G Unix Makefiles
