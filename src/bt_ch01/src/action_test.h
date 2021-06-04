@@ -12,6 +12,7 @@ class ApproachObject : public BT::SyncActionNode
     }
 
     // You must override the virtual function tick()
+    // tick()是母節點對子節點下達命令，到達這個節點時，會使用這個節點的tick()成員，同樣這個動作也叫做tick()
     BT::NodeStatus tick() override
     {
         std::cout << "ApproachObject: " << this->name() << std::endl;

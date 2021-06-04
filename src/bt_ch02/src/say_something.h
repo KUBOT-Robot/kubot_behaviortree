@@ -1,13 +1,13 @@
-// SyncActionNode (synchronous action) with an input port.
+
 #pragma once
 #include <behaviortree_cpp_v3/action_node.h>
 
-
+// SyncActionNode (synchronous action) with an input port.
 class SaySomething : public BT::SyncActionNode
 {
     public:
         // 如果我今天要建立的是通訊端口(port)，就必須使用這樣子的建構子
-        SaySomething(const std::string& name,const BT::NodeConfiguration& config):BT::SyncAcionNode(name,config)
+        SaySomething (const std::string& name, const BT::NodeConfiguration& config) : BT::SyncActionNode(name, config)
         {}
 
         // 必須宣告成靜態
@@ -15,20 +15,21 @@ class SaySomething : public BT::SyncActionNode
         {
             // 此動作是在命名一個端口名叫""message"
             // 所有的端口都有名字，而端口的型態可以選擇
-            return{ InputPort<std::string>("message")};
+            return{ BT::InputPort<std::string>("message")};
         }
 
         // 同樣的tick()必須override
+        // 呼叫到這個節點的時候，把message裡面的內容顯示到終端機上面
         BT::NodeStatus tick() override
         {
-            Optional<std::string> msg = getInput<std::string>("message");
-            // 檢查Optional是否運行正常，如果沒有，警告錯誤
-            if(!msg)
+            std::string expect_message;
+            // 檢查是否運行正常，如果沒有，警告錯誤
+            if(!getInput<std::string>("message",expect_message))
             {
-                throw BT::RuntimeError("missing required input [message] : ",msg.error());
+                throw BT::RuntimeError("missing required input [message] : ");
             }
-            // 用value()的方法去提取input的內容
-            std::cout << "Robot says : " msg.value() << std::endl;
-            return NodeStatus::SUCCESS;
+            // 顯示從input port裡拿到的內容
+            std::cout << "Robot says : " << expect_message.c_str()<< std::endl;
+            return BT::NodeStatus::SUCCESS;
         }
-}
+};

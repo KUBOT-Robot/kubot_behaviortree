@@ -31,18 +31,18 @@ int main(int argc,char **argv){
     
     // 一般建立Node時是建議使用繼承
     // 此為ActionNode，屬於葉，不會有子節點，負責執行動作
-    factory.registerNodeType<ApproachObject>("ApproachObject");
+    factory.registerNodeType<ApproachObject>("ApproachObject");// 這個是class的版本
 
     // 在建立SimpleActionNode時使用函式指標(function pointer)
     // 如果使用的是C++11，可以考慮使用lambdas來代替std::bind()
     /*  此為ConditionNode，類似於ActionNode，
           但不同的是，這類的節點必須是不可被分割、運行中不可中斷，同時他們會與主程式並行處理，
           狀態不可回傳RUNNING，也不應該改變系統狀態*/
-    factory.registerSimpleCondition("CheckBattery", std::bind(CheckBattery));
+    factory.registerSimpleCondition("CheckBattery", std::bind(CheckBattery)); // 這個是一般函式(function)的版本
 
     //用另外一種方式創造SimpleActionNode
     GripperInterface gripper;
-    factory.registerSimpleCondition("OpenGripper",std::bind(&GripperInterface::open,&gripper));
+    factory.registerSimpleCondition("OpenGripper",std::bind(&GripperInterface::open,&gripper)); // 這是class的版本
     factory.registerSimpleCondition("CloseGripper",std::bind(&GripperInterface::close,&gripper));
 
     // 建立樹
