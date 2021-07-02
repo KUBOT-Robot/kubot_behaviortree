@@ -19,6 +19,11 @@ class SaySomething : public BT::SyncActionNode
         }
 
         // 同樣的tick()必須override
+        /* * *
+          *     override的中文翻譯叫做複寫，虛擬函式的安全措施，
+          *     是用來告訴編譯器這個函式現在是要複寫虛擬函式，若未有虛擬函式宣告，
+          *     編譯器會報錯
+        * * */
         // 呼叫到這個節點的時候，把message裡面的內容顯示到終端機上面
         BT::NodeStatus tick() override
         {

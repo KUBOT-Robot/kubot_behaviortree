@@ -42,7 +42,7 @@ int main(int argc,char **argv){
 
     //用另外一種方式創造SimpleActionNode
     GripperInterface gripper;
-    factory.registerSimpleCondition("OpenGripper",std::bind(&GripperInterface::open,&gripper)); // 這是class的版本
+    factory.registerSimpleCondition("OpenGripper",std::bind(&GripperInterface::open,&gripper)); // 這是class中成員成為node的版本
     factory.registerSimpleCondition("CloseGripper",std::bind(&GripperInterface::close,&gripper));
 
     // 建立樹
