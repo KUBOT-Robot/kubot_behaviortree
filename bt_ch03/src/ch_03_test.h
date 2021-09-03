@@ -20,7 +20,7 @@ namespace BT
 {
 template <> inline Position2D convertFromString(StringView str) // StringView是C++11版本的std::string_view
 {
-    printf("Converting string: \"%s\"\n", str.data() ); // 終端機顯示現在Position2D的內容，目前的型態是std::strinr
+    printf("Converting string: \"%s\"\n", str.data() ); // 終端機顯示現在Position2D的內容，目前的型態是std::string
 
     // real numbers separated by semicolons
     // splitString()為字串分割，根據;來分割字串
