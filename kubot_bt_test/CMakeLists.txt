@@ -12,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   behaviortree_cpp_v3
   move_base_msgs
-  object_msgs
   roscpp
   rospy
   std_msgs
@@ -75,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   actionlib_msgs#   move_base_msgs#   object_msgs#   std_msgs
+#   actionlib_msgs#   move_base_msgs#   std_msgs
 # )
 
 ################################################
@@ -110,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES kubot_bt_test
-#  CATKIN_DEPENDS actionlib actionlib_msgs behaviortree_cpp_v3 move_base_msgs object_msgs roscpp rospy std_msgs
+#  CATKIN_DEPENDS actionlib actionlib_msgs behaviortree_cpp_v3 move_base_msgs roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
