@@ -83,6 +83,7 @@ public:
     static PortsList providedPorts()
     {
         // Optionally, a port can have a human readable description
+        // 選項性質，端口可以有人類可讀的訊息
         const char*  description = "Simply print the target on console...";
         return { InputPort<Position2D>("target", description) };
     }
