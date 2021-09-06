@@ -1,9 +1,9 @@
-<root >
+<root>
     <BehaviorTree>
         <Timeout msec="150">
             <SequenceStar name="sequence">
-                <MyAsyncAction name="action_A"/>
-                <MyAsyncAction name="action_B"/>
+                <MyAsyncAction name="action_A" />
+                <MyAsyncAction name="action_B" />
             </SequenceStar>
         </Timeout>
     </BehaviorTree>

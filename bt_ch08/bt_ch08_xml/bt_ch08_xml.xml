@@ -1,7 +1,7 @@
-<root >
+<root>
     <BehaviorTree>
         <Sequence>
-            <Action_A/>
+            <Action_A />
         </Sequence>
     </BehaviorTree>
 </root>
