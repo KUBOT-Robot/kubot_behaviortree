@@ -26,7 +26,7 @@ template <> inline Position2D convertFromString(StringView str){
    // splitString()為字串分割，利用;來分割
    auto parts = splitString(str, ';');
    if(parts.size() != 4){
-      throw RuntimeError("invalid input")
+      throw RuntimeError("invalid input");
    }
    else{
       // 將字串分割完畢之後，就可以使用convertFromeString<資料型態>將字串修改成我們所需要的資料型態
@@ -40,9 +40,12 @@ template <> inline Position2D convertFromString(StringView str){
 }
 }// end namespace BT
 
-class MoveBase : public SyncActionNode{
+class MoveBase : public AsyncActionNode{
 public:
-   MoveBase(const std::string& name) : SyncActionNode(name,{}){}
+   MoveBase(const std::string& name, const BT::NodeConfiguration& config): 
+   BT::AsyncActionNode(name, config),_client("move_base", true)
+   {
+   }
 
    // 必須靜態成員
    static PortsList providedPorts(){
@@ -60,4 +63,4 @@ private:
    MoveBaseClient _client;
    bool _aborted;//  中止flag
 
-}
+};

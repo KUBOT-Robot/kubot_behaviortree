@@ -49,7 +49,7 @@ include_directories(  ${catkin_INCLUDE_DIRS})
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(${PROJECT_NAME}_node
   src/main.cpp
-  src/kubot_bt_test_node.cpp
+  src/movebase_client.cpp
   )
 
 ## Rename C++ executable without prefix
