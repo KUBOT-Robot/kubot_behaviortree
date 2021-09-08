@@ -39,8 +39,6 @@ int main(int argc,char **argv){
             action_B->init( 42, 3.14, "hello world, action_b");
         }
     }
-
-<<<<<<< HEAD
     
     // 建立監控者
     StdCoutLogger logger_cout(tree);
@@ -53,8 +51,5 @@ int main(int argc,char **argv){
     // Sleep 100 milliseconds
     std::this_thread::sleep_for(std::chrono::milliseconds(100)); // 等個0.1秒
     }
-=======
-    tree.tickRoot();
->>>>>>> 08614cbd957be768068a29b653a0ccb21903905a
     return 0;
 }

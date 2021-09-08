@@ -5,8 +5,8 @@ using namespace BT;
 class MyAsyncAction: public CoroActionNode{
 public:
    MyAsyncAction(const std::string& name):
-        CoroActionNode(name, {})
-    {}
+      CoroActionNode(name, {})
+   {}
 
 private:
    NodeStatus tick() override{
