@@ -1,12 +1,3 @@
-/* 
-    behaviortree_cpp_v3.cpp實做，建立第一棵Behavior Tree
-    主要有：
-    ．ros節點建立behaviortree_cpp_v3之中AcionNode的建立
-    ．SimpleCondition兩種建立方式
-    ．xml格式與建立方式
-    ．樹的監控方式
-    ．roslaunch啟動檔案內容與啟動方式
-*/
 #include <ros/ros.h>
 #include <behaviortree_cpp_v3/bt_factory.h>
 #include <behaviortree_cpp_v3/loggers/bt_cout_logger.h>
