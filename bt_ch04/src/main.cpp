@@ -2,7 +2,7 @@
 Sequeue與ReactiveSequeue兩種不同框架下的Sequeue節點運行狀態
 Sequeue的運作原理是，tick子節點時，
 若子節點回傳FAILURE   ，則在下次運行的時候，從頭開始運行
-若子節點回傳RUNNINT，則在下次運行的時候，從剛剛回傳RUNNING的節點開始運行
+若子節點回傳RUNNING，則在下次運行的時候，從剛剛回傳RUNNING的節點開始運行
 
 ReactiveSequeue的運作原理是，tick子節點時，
 若子節點回傳FAILURE   ，則在下次運行的時候，從頭開始運行
@@ -38,7 +38,7 @@ ReactiveSequeue的運行結果會顯示：
 -[ CheckBattery OK ]
 -Robot says : mission started...
 -Robot says : mission copleted!
-可以注意到BatteryOK被執行的三次，意思是執行了了三次，而且三次都是重頭開始執行
+可以注意到BatteryOK被執行的三次，意思是執行了三次，而且三次都是重頭開始執行
 
 */
 #include <ros/ros.h>

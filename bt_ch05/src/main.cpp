@@ -6,8 +6,9 @@ Subtree的建立，並與Behaviors結合
 在bt_ch05_xml.xml中，樹被分成MainTree與DoorClosed兩顆樹
 MainTree中又呼叫了DoorClosed這棵樹：<SubTree ID="DoorClosed">就是在主程式中呼叫SubTree的方法
 
-註：分別將is_door_open.h中IsDoorOpen建構子中的_open變數修改成true
-                       open_door.h中OpenDoor中的line 18：open_door_num++; 註解掉，可以得到不同運行結果
+註：分別將
+is_door_open.h中IsDoorOpen建構子中的_open變數修改成true
+open_door.h中OpenDoor中的line 18：open_door_num++; 註解掉，可以得到不同運行結果
 */
 #include <ros/ros.h>
 #include <behaviortree_cpp_v3/bt_factory.h>

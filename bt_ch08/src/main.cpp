@@ -40,6 +40,6 @@ int main(int argc,char **argv){
         }
     }
 
-     tree.tickRoot();
+    tree.tickRoot();
     return 0;
 }

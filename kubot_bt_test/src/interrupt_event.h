@@ -17,12 +17,12 @@ class InterruptEvent : public BT::SyncActionNode
       InterruptEvent(const std::string& name, const BT::NodeConfiguration& config)
             : BT::SyncActionNode(name, config)
       {
-            sub_ = node_.subscribe("interrupt_event", 1000, interruptCallback);
+         sub_ = node_.subscribe("interrupt_event", 1000, interruptCallback);
       }
 
       static BT::PortsList providedPorts()
       {
-            return{ BT::InputPort<std::string>("event") };
+         return{ BT::InputPort<std::string>("event") };
       }
 
       virtual BT::NodeStatus tick() override
