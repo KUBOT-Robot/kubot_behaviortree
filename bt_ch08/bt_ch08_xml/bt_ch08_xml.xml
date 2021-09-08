@@ -1,7 +1,8 @@
-<root>
-    <BehaviorTree>
-        <Sequence>
-            <Action_A />
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <Action_A name="actino_a" />
+            <Action_B name="actino_b" />
         </Sequence>
     </BehaviorTree>
 </root>

@@ -1,10 +1,8 @@
-<root>
-    <BehaviorTree>
-        <Timeout msec="150">
-            <SequenceStar name="sequence">
-                <MyAsyncAction name="action_A" />
-                <MyAsyncAction name="action_B" />
-            </SequenceStar>
-        </Timeout>
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <ApproachObject name="action_A" />
+            <ApproachObject name="action_B" />
+        </Sequence>
     </BehaviorTree>
 </root>
