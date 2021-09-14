@@ -6,27 +6,26 @@
 
 主樹
 <BehaviorTree ID="MainTree">
+    <Sequence name="main_sequence">
+        <SetBlackboard output_key="move_goal" value="1;2;3" />
+        <SubTree ID="MoveRobot" target="move_goal" output="move_result" />
+        <SaySomething message="{move_result}"/>
+    </Sequence>
 
-        <Sequence name="main_sequence">
-            <SetBlackboard output_key="move_goal" value="1;2;3" />
-            <SubTree ID="MoveRobot" target="move_goal" output="move_result" />
-            <SaySomething message="{move_result}"/>
-        </Sequence>
-
-    </BehaviorTree>
+</BehaviorTree>
 
 子樹
- <BehaviorTree ID="MoveRobot">
-        <Fallback name="move_robot_main">
-            <SequenceStar>
-                <MoveBase       goal="{target}"/>
-                <SetBlackboard output_key="output" value="mission accomplished" />
-            </SequenceStar>
-            <ForceFailure>
-                <SetBlackboard output_key="output" value="mission failed" />
-            </ForceFailure>
-        </Fallback>
-    </BehaviorTree>
+<BehaviorTree ID="MoveRobot">
+    <Fallback name="move_robot_main">
+        <SequenceStar>
+            <MoveBase       goal="{target}"/>
+            <SetBlackboard output_key="output" value="mission accomplished" />
+        </SequenceStar>
+        <ForceFailure>
+            <SetBlackboard output_key="output" value="mission failed" /
+        </ForceFailure>
+    </Fallback>
+</BehaviorTree>
 
 
 可以看見主樹宣告了一個Blackeboard名字叫move_goal，數值是1,2,3

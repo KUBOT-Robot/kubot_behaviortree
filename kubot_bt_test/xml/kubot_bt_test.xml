@@ -10,7 +10,9 @@
                     <Repeat num_cycles="-1">
                         <Sequence>
                             <SubTree ID="MoveRobot" target="Goal_a" />
+                            <WaitingEvent name="waiting_event" />
                             <SubTree ID="MoveRobot" target="Goal_b" />
+                            <WaitingEvent name="waiting_event" />
                         </Sequence>
                     </Repeat>
                 </ReactiveSequence>

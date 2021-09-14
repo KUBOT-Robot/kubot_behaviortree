@@ -1,12 +1,14 @@
 #include <behaviortree_cpp_v3/action_node.h>
 using namespace BT;
 
-// Custom type
+//  Custom type
+//  使用者自行宣告的型態
 struct Pose2D
 {
     double x, y, theta;
 };
 
+//  分割資料
 namespace BT
 {
     template <> inline Pose2D convertFromString(StringView str) // StringView是C++11版本的std::string_view
@@ -26,9 +28,11 @@ namespace BT
     }
 }
 
+//  An Asynchronous Action has it's own thread. This allows the user to use blocking functions but to return the flow of execution to the tree.
+//  在這裡使用AsyncActionNode(異步操作)，這能夠讓使用者使用者使用其他的blocking functions(阻塞式函式)時依舊能夠將參數回傳到樹之中
 class MoveBaseAction : public AsyncActionNode
 {
-  public:
+public:
     MoveBaseAction(const std::string& name, const NodeConfiguration& config):
         AsyncActionNode(name,config)
     {}
@@ -47,7 +51,7 @@ class MoveBaseAction : public AsyncActionNode
         _halt_requested.store(true);
     }
 
-  private:
+private:
     std::atomic_bool _halt_requested;
 };
 

@@ -1,5 +1,6 @@
 #include "movebase_client.h"
 #include "interrupt_event.h"
+#include "waiting_event.h"
 
 #include <behaviortree_cpp_v3/bt_factory.h>
 #include <behaviortree_cpp_v3/loggers/bt_cout_logger.h>
@@ -18,6 +19,7 @@ int main(int argc, char **argv) {
 
    factory.registerNodeType<MoveBase>("MoveBase");
    factory.registerNodeType<InterruptEvent>("InterruptEvent");
+   factory.registerNodeType<WaitingEvent>("WaitingEvent");
 
    auto tree = factory.createTreeFromFile(xml_filename);
 

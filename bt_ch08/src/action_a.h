@@ -18,7 +18,7 @@ public:
         _arg3(arg3) {}
 
     // tick() 可以訪問私有成員
-     NodeStatus tick() override
+    NodeStatus tick() override
     {
         std::cout << "Action_A: " << _arg1 << " / " << _arg2 << " / " << _arg3 << std::endl;
         return NodeStatus::SUCCESS;
