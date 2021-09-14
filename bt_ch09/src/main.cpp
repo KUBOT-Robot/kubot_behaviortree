@@ -3,7 +3,6 @@
 #include <behaviortree_cpp_v3/loggers/bt_cout_logger.h>
 #include <behaviortree_cpp_v3/loggers/bt_zmq_publisher.h>
 
-#include "action_test.h"
 #include "my_async_action.h"
 
 using namespace BT;
