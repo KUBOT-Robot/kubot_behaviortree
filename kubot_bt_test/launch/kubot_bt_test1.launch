@@ -1,7 +1,7 @@
 <launch>
 
     <node pkg="kubot_bt_test" type="node" name="kubot_bt_test_node" output="screen">
-        <param name="file" value="$(find kubot_bt_test)/xml/kubot_bt_test.xml"/>
+        <param name="file" value="$(find kubot_bt_test)/xml/kubot_bt_test1.xml"/>
     </node>
 
 </launch>
