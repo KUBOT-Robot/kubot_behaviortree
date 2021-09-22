@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
    ros::NodeHandle nh("~");
    std::string xml_filename;
-   nh.param<std::string>("file",xml_filename,"/home/behaviortree_test/src/kubot_bt_test/xml/kubot_bt_test.xml");
+   nh.param<std::string>("file",xml_filename,"~/kubot_behavior_tree/xml/kubot_bt_test.xml");
    ROS_INFO("Loading XML : %s" , xml_filename.c_str());
 
    BehaviorTreeFactory factory;
